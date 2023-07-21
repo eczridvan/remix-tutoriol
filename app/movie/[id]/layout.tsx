@@ -6,7 +6,7 @@ async function getData(id:string){
     const url = await fetch(`https://api.themoviedb.org/3/movie/${id}`, {
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZWM3MTA3MzUwNjVhODE5ZDcyZjQ5YzY0NTk0ZWFiZCIsInN1YiI6IjYzMzExYTk3Mzg3NjUxMDA3YjUxZDZiNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PN8RCYhrI8qIf3ygonKRuY9JdabdeFG1F-oC7WOietU'
+            Authorization: `Bearer ${process.env.THEMOVIESDATABASE_API}` as string
           },
           next:{
             revalidate:60
